@@ -1,0 +1,402 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D35ED07E-1F06-4841-BF80-404E9A861801}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GiB</RootNamespace>
+    <AssemblyName>GiB</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Drivers.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employess.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddUserPage.xaml.cs">
+      <DependentUpon>AddUserPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\card.xaml.cs">
+      <DependentUpon>card.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Page1.xaml.cs">
+      <DependentUpon>Page1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Status.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Page Include="Dictionary1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Pages\AddUserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AuthPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\card.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Page1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\UserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Pages\AuthPage.xaml.cs">
+      <DependentUpon>AuthPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UserPage.xaml.cs">
+      <DependentUpon>UserPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="gibdd_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="photo\001-happy-18.png" />
+    <Resource Include="photo\002-cool-5.png" />
+    <Resource Include="photo\003-happy-17.png" />
+    <Resource Include="photo\004-surprised-9.png" />
+    <Resource Include="photo\005-shocked-4.png" />
+    <Resource Include="photo\006-shocked-3.png" />
+    <Resource Include="photo\007-nervous-2.png" />
+    <Resource Include="photo\008-nervous-1.png" />
+    <Resource Include="photo\009-angry-6.png" />
+    <Resource Include="photo\010-drool.png" />
+    <Resource Include="photo\011-tired-2.png" />
+    <Resource Include="photo\012-tongue-7.png" />
+    <Resource Include="photo\013-tongue-6.png" />
+    <Resource Include="photo\014-tongue-5.png" />
+    <Resource Include="photo\015-smile-1.png" />
+    <Resource Include="photo\016-sleeping-1.png" />
+    <Resource Include="photo\017-nervous.png" />
+    <Resource Include="photo\018-surprised-8.png" />
+    <Resource Include="photo\019-tongue-4.png" />
+    <Resource Include="photo\020-happy-16.png" />
+    <Resource Include="photo\021-wink-1.png" />
+    <Resource Include="photo\022-laughing-2.png" />
+    <Resource Include="photo\023-laughing-1.png" />
+    <Resource Include="photo\024-sweat-1.png" />
+    <Resource Include="photo\025-happy-15.png" />
+    <Resource Include="photo\026-happy-14.png" />
+    <Resource Include="photo\027-laughing.png" />
+    <Resource Include="photo\028-happy-13.png" />
+    <Resource Include="photo\029-happy-12.png" />
+    <Resource Include="photo\030-crying-8.png" />
+    <Resource Include="photo\031-crying-7.png" />
+    <Resource Include="photo\032-bored.png" />
+    <Resource Include="photo\033-cool-4.png" />
+    <Resource Include="photo\034-angry-5.png" />
+    <Resource Include="photo\035-sad-14.png" />
+    <Resource Include="photo\036-angry-4.png" />
+    <Resource Include="photo\037-happy-11.png" />
+    <Resource Include="photo\038-angry-3.png" />
+    <Resource Include="photo\039-cyclops-1.png" />
+    <Resource Include="photo\040-surprised-7.png" />
+    <Resource Include="photo\041-thinking-2.png" />
+    <Resource Include="photo\042-book.png" />
+    <Resource Include="photo\043-baby-boy.png" />
+    <Resource Include="photo\044-dead-1.png" />
+    <Resource Include="photo\045-star.png" />
+    <Resource Include="photo\046-dubious.png" />
+    <Resource Include="photo\047-phone-call.png" />
+    <Resource Include="photo\048-moon.png" />
+    <Resource Include="photo\049-robot.png" />
+    <Resource Include="photo\050-flower.png" />
+    <Resource Include="photo\051-happy-10.png" />
+    <Resource Include="photo\052-happy-9.png" />
+    <Resource Include="photo\053-tired-1.png" />
+    <Resource Include="photo\054-ugly-3.png" />
+    <Resource Include="photo\055-tongue-3.png" />
+    <Resource Include="photo\056-vampire.png" />
+    <Resource Include="photo\057-music-1.png" />
+    <Resource Include="photo\058-popcorn.png" />
+    <Resource Include="photo\059-nurse.png" />
+    <Resource Include="photo\060-sad-13.png" />
+    <Resource Include="photo\061-graduated-1.png" />
+    <Resource Include="photo\062-happy-8.png" />
+    <Resource Include="photo\063-hungry.png" />
+    <Resource Include="photo\064-police.png" />
+    <Resource Include="photo\065-crying-6.png" />
+    <Resource Include="photo\066-happy-7.png" />
+    <Resource Include="photo\067-sun.png" />
+    <Resource Include="photo\068-father-2.png" />
+    <Resource Include="photo\069-happy-6.png" />
+    <Resource Include="photo\070-late.png" />
+    <Resource Include="photo\071-heart.png" />
+    <Resource Include="photo\072-sick-3.png" />
+    <Resource Include="photo\073-sad-12.png" />
+    <Resource Include="photo\074-in-love-10.png" />
+    <Resource Include="photo\075-shocked-2.png" />
+    <Resource Include="photo\076-happy-5.png" />
+    <Resource Include="photo\077-shocked-1.png" />
+    <Resource Include="photo\078-cool-3.png" />
+    <Resource Include="photo\079-crying-5.png" />
+    <Resource Include="photo\080-zombie.png" />
+    <Resource Include="photo\081-pain.png" />
+    <Resource Include="photo\082-cyclops.png" />
+    <Resource Include="photo\083-sweat.png" />
+    <Resource Include="photo\084-thief.png" />
+    <Resource Include="photo\085-sad-11.png" />
+    <Resource Include="photo\086-kiss-4.png" />
+    <Resource Include="photo\087-father-1.png" />
+    <Resource Include="photo\088-father.png" />
+    <Resource Include="photo\089-angel-1.png" />
+    <Resource Include="photo\090-happy-4.png" />
+    <Resource Include="photo\091-sad-10.png" />
+    <Resource Include="photo\092-outrage-1.png" />
+    <Resource Include="photo\093-ugly-2.png" />
+    <Resource Include="photo\094-ugly-1.png" />
+    <Resource Include="photo\095-scared.png" />
+    <Resource Include="photo\096-tongue-2.png" />
+    <Resource Include="photo\097-sad-9.png" />
+    <Resource Include="photo\098-nerd-9.png" />
+    <Resource Include="photo\099-greed-2.png" />
+    <Resource Include="photo\100-whistle.png" />
+    <Resource Include="photo\101-nerd-8.png" />
+    <Resource Include="photo\102-muted-4.png" />
+    <Resource Include="photo\103-in-love-9.png" />
+    <Resource Include="photo\104-in-love-8.png" />
+    <Resource Include="photo\105-kiss-3.png" />
+    <Resource Include="photo\106-in-love-7.png" />
+    <Resource Include="photo\107-ugly.png" />
+    <Resource Include="photo\108-nerd-7.png" />
+    <Resource Include="photo\109-nerd-6.png" />
+    <Resource Include="photo\110-crying-4.png" />
+    <Resource Include="photo\111-muted-3.png" />
+    <Resource Include="photo\112-nerd-5.png" />
+    <Resource Include="photo\113-kiss-2.png" />
+    <Resource Include="photo\114-greed-1.png" />
+    <Resource Include="photo\115-pirate-1.png" />
+    <Resource Include="photo\116-music.png" />
+    <Resource Include="photo\117-confused-2.png" />
+    <Resource Include="photo\118-nerd-4.png" />
+    <Resource Include="photo\119-greed.png" />
+    <Resource Include="photo\120-nerd-3.png" />
+    <Resource Include="photo\121-crying-3.png" />
+    <Resource Include="photo\122-cheering.png" />
+    <Resource Include="photo\123-surprised-6.png" />
+    <Resource Include="photo\124-muted-2.png" />
+    <Resource Include="photo\125-sick-2.png" />
+    <Resource Include="photo\126-graduated.png" />
+    <Resource Include="photo\127-angry-2.png" />
+    <Resource Include="photo\128-in-love-6.png" />
+    <Resource Include="photo\129-cool-2.png" />
+    <Resource Include="photo\130-confused-1.png" />
+    <Resource Include="photo\131-sad-8.png" />
+    <Resource Include="photo\132-nerd-2.png" />
+    <Resource Include="photo\133-birthday-boy.png" />
+    <Resource Include="photo\134-surprised-5.png" />
+    <Resource Include="photo\135-selfie.png" />
+    <Resource Include="photo\136-tongue-1.png" />
+    <Resource Include="photo\137-smart-1.png" />
+    <Resource Include="photo\138-smart.png" />
+    <Resource Include="photo\139-surprised-4.png" />
+    <Resource Include="photo\140-3d-glasses.png" />
+    <Resource Include="photo\141-in-love-5.png" />
+    <Resource Include="photo\142-sleeping.png" />
+    <Resource Include="photo\143-pirate.png" />
+    <Resource Include="photo\144-santa-claus.png" />
+    <Resource Include="photo\145-wink.png" />
+    <Resource Include="photo\146-in-love-4.png" />
+    <Resource Include="photo\147-tired.png" />
+    <Resource Include="photo\148-bang.png" />
+    <Resource Include="photo\149-baby.png" />
+    <Resource Include="photo\150-tongue.png" />
+    <Resource Include="photo\151-sick-1.png" />
+    <Resource Include="photo\152-outrage.png" />
+    <Resource Include="photo\153-injury.png" />
+    <Resource Include="photo\154-dead.png" />
+    <Resource Include="photo\155-rich-1.png" />
+    <Resource Include="photo\156-sick.png" />
+    <Resource Include="photo\157-angel.png" />
+    <Resource Include="photo\158-nerd-1.png" />
+    <Resource Include="photo\159-crying-2.png" />
+    <Resource Include="photo\160-crying-1.png" />
+    <Resource Include="photo\161-muted-1.png" />
+    <Resource Include="photo\162-surprised-3.png" />
+    <Resource Include="photo\163-crying.png" />
+    <Resource Include="photo\164-sad-7.png" />
+    <Resource Include="photo\165-cool-1.png" />
+    <Resource Include="photo\166-happy-3.png" />
+    <Resource Include="photo\167-thinking-1.png" />
+    <Resource Include="photo\168-muted.png" />
+    <Resource Include="photo\169-confused.png" />
+    <Resource Include="photo\170-happy-2.png" />
+    <Resource Include="photo\171-thinking.png" />
+    <Resource Include="photo\172-nerd.png" />
+    <Resource Include="photo\173-in-love-3.png" />
+    <Resource Include="photo\174-hypnotized.png" />
+    <Resource Include="photo\175-cool.png" />
+    <Resource Include="photo\176-shocked.png" />
+    <Resource Include="photo\177-easter.png" />
+    <Resource Include="photo\178-surprised-2.png" />
+    <Resource Include="photo\179-surprised-1.png" />
+    <Resource Include="photo\180-surprised.png" />
+    <Resource Include="photo\181-furious.png" />
+    <Resource Include="photo\182-sad-6.png" />
+    <Resource Include="photo\183-sad-5.png" />
+    <Resource Include="photo\184-sad-4.png" />
+    <Resource Include="photo\185-sad-3.png" />
+    <Resource Include="photo\186-angry-1.png" />
+    <Resource Include="photo\187-rich.png" />
+    <Resource Include="photo\188-sad-2.png" />
+    <Resource Include="photo\189-happy-1.png" />
+    <Resource Include="photo\190-sad-1.png" />
+    <Resource Include="photo\191-sad.png" />
+    <Resource Include="photo\192-smile.png" />
+    <Resource Include="photo\193-in-love-2.png" />
+    <Resource Include="photo\194-happy.png" />
+    <Resource Include="photo\195-kiss-1.png" />
+    <Resource Include="photo\196-in-love-1.png" />
+    <Resource Include="photo\197-in-love.png" />
+    <Resource Include="photo\198-kiss.png" />
+    <Resource Include="photo\199-angry.png" />
+    <Resource Include="photo\200-sleepy.png" />
+    <Resource Include="driver_license_template.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

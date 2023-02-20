@@ -1,0 +1,54 @@
+﻿<Page x:Class="GiB.Pages.card"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GiB.Pages"
+      mc:Ignorable="d"
+      Title="card" Height="565.84" Width="894.678">
+
+    <Grid>
+        <Image Source="/GiB;component/driver_license_template.jpg" Stretch="Fill"/>
+        <TextBox Text="{Binding name}"  HorizontalAlignment="Left" Height="34" Margin="376,187,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="336"/>
+        <TextBox Text="{Binding middlename}" HorizontalAlignment="Left" Height="34" Margin="376,226,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="336"/>
+        <TextBox Text="{Binding passportserial}" HorizontalAlignment="Left" Height="34" Margin="376,265,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="336"/>
+        <TextBox Text="{Binding passportnumber}"  HorizontalAlignment="Left" Height="34" Margin="376,304,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="336"/>
+        <TextBox Text="{Binding address}"  HorizontalAlignment="Left" Height="34" Margin="376,343,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="336"/>
+        <TextBox Text="{Binding phone}" HorizontalAlignment="Left" Height="34" Margin="376,382,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="336"/>
+        <TextBox Text="{Binding licence_date}" HorizontalAlignment="Left" Height="34" Margin="376,421,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="336"/>
+        <TextBox Text="{Binding expire_date}" HorizontalAlignment="Left" Height="34" Margin="376,460,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="336"/>
+        <TextBox Text="{Binding categories}" HorizontalAlignment="Left" Height="34" Margin="376,499,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="336"/>
+        <ListView  x:Name="ListUser" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="332" Margin="47,187,0,0" VerticalAlignment="Top" Width="256">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="450"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Image Width="450" Grid.Row="1" Stretch="UniformToFill" HorizontalAlignment="Center">
+                            <Image.Source>
+                                <Binding Path="Photo">
+                                    <Binding.TargetNullValue>
+                                        <ImageSource>/photo/001-happy-18.png</ImageSource>
+
+
+                                    </Binding.TargetNullValue>
+                                </Binding>
+                            </Image.Source>
+                        </Image>
+
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+      
+
+    </Grid>
+</Page>
